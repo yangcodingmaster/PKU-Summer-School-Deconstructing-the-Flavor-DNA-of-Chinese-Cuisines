@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_01eca87b2672ad0c156bd2fa231dd030 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_01eca87b2672ad0c156bd2fa231dd030" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_01eca87b2672ad0c156bd2fa231dd030 = L.map(
+                "map_01eca87b2672ad0c156bd2fa231dd030",
+                {
+                    center: [35.86, 104.19],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6cfecb256ee89cd9faaa3be089d10ff4 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6cfecb256ee89cd9faaa3be089d10ff4.addTo(map_01eca87b2672ad0c156bd2fa231dd030);
+        
+    
+            var marker_2da915501e62c26bc64eb38295c3fda6 = L.marker(
+                [36.67, 117.02],
+                {
+}
+            ).addTo(map_01eca87b2672ad0c156bd2fa231dd030);
+        
+    
+            var div_icon_df5ecbd2072fde61443bffc4dc8cdfbf = L.divIcon({
+  "html": "\n    \u003cdiv style=\"text-align: center; font-family: \u0027Microsoft YaHei\u0027, sans-serif;\"\u003e\n      \u003cdiv style=\"width: 25px; height: 78.61936932263126px; background-color: orangered; margin: 0 auto; border-radius: 4px; border: 1px solid rgba(0,0,0,0.5);\"\u003e\u003c/div\u003e\n      \u003cdiv style=\"font-size: 13px; font-weight: bold; color: #333; margin-top: 2px;\"\u003e\u9c81\u83dc\u003c/div\u003e\n    \u003c/div\u003e\n    ",
+  "iconAnchor": [12.5, 96.61936932263126],
+  "className": "empty",
+});
+        
+    
+        var popup_28c5116e07b7e5498f55b96c7bce09ce = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e7f5c1b0016f1e213d2588942c9a827e = $(`<div id="html_e7f5c1b0016f1e213d2588942c9a827e" style="width: 100.0%; height: 100.0%;"><b>菜系:</b> 鲁菜 (Lu)<br><b>代表城市:</b> 济南<br><b>“糖”的PR值:</b> 0.0695</div>`)[0];
+                popup_28c5116e07b7e5498f55b96c7bce09ce.setContent(html_e7f5c1b0016f1e213d2588942c9a827e);
+            
+        
+
+        marker_2da915501e62c26bc64eb38295c3fda6.bindPopup(popup_28c5116e07b7e5498f55b96c7bce09ce)
+        ;
+
+        
+    
+    
+                marker_2da915501e62c26bc64eb38295c3fda6.setIcon(div_icon_df5ecbd2072fde61443bffc4dc8cdfbf);
+            
+    
+            var marker_c1012af80cf6bcfe8b3d3887eaadf120 = L.marker(
+                [23.13, 113.26],
+                {
+}
+            ).addTo(map_01eca87b2672ad0c156bd2fa231dd030);
+        
+    
+            var div_icon_a34bd06dcb78f16ae2e0ba9c9b002aca = L.divIcon({
+  "html": "\n    \u003cdiv style=\"text-align: center; font-family: \u0027Microsoft YaHei\u0027, sans-serif;\"\u003e\n      \u003cdiv style=\"width: 25px; height: 55.69607531554374px; background-color: orangered; margin: 0 auto; border-radius: 4px; border: 1px solid rgba(0,0,0,0.5);\"\u003e\u003c/div\u003e\n      \u003cdiv style=\"font-size: 13px; font-weight: bold; color: #333; margin-top: 2px;\"\u003e\u7ca4\u83dc\u003c/div\u003e\n    \u003c/div\u003e\n    ",
+  "iconAnchor": [12.5, 73.69607531554374],
+  "className": "empty",
+});
+        
+    
+        var popup_50d6d16991d21fc995c9a1acaf1f1416 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cb743274142c8a6efab52bdd2fc45dcf = $(`<div id="html_cb743274142c8a6efab52bdd2fc45dcf" style="width: 100.0%; height: 100.0%;"><b>菜系:</b> 粤菜 (Yue)<br><b>代表城市:</b> 广州<br><b>“糖”的PR值:</b> 0.0469</div>`)[0];
+                popup_50d6d16991d21fc995c9a1acaf1f1416.setContent(html_cb743274142c8a6efab52bdd2fc45dcf);
+            
+        
+
+        marker_c1012af80cf6bcfe8b3d3887eaadf120.bindPopup(popup_50d6d16991d21fc995c9a1acaf1f1416)
+        ;
+
+        
+    
+    
+                marker_c1012af80cf6bcfe8b3d3887eaadf120.setIcon(div_icon_a34bd06dcb78f16ae2e0ba9c9b002aca);
+            
+    
+            var marker_5a4abef2aec74526d39e1e061df94742 = L.marker(
+                [30.66, 104.07],
+                {
+}
+            ).addTo(map_01eca87b2672ad0c156bd2fa231dd030);
+        
+    
+            var div_icon_15fd0d2b5ac45d823dcbe8656d1086a9 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"text-align: center; font-family: \u0027Microsoft YaHei\u0027, sans-serif;\"\u003e\n      \u003cdiv style=\"width: 25px; height: 62.73113204372672px; background-color: orangered; margin: 0 auto; border-radius: 4px; border: 1px solid rgba(0,0,0,0.5);\"\u003e\u003c/div\u003e\n      \u003cdiv style=\"font-size: 13px; font-weight: bold; color: #333; margin-top: 2px;\"\u003e\u5ddd\u83dc\u003c/div\u003e\n    \u003c/div\u003e\n    ",
+  "iconAnchor": [12.5, 80.73113204372672],
+  "className": "empty",
+});
+        
+    
+        var popup_1925bcbeb5756ade558ef0f793d8036a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_32946ef9bd2e160b13b397fb63dfc08b = $(`<div id="html_32946ef9bd2e160b13b397fb63dfc08b" style="width: 100.0%; height: 100.0%;"><b>菜系:</b> 川菜 (Chuan)<br><b>代表城市:</b> 成都<br><b>“糖”的PR值:</b> 0.0538</div>`)[0];
+                popup_1925bcbeb5756ade558ef0f793d8036a.setContent(html_32946ef9bd2e160b13b397fb63dfc08b);
+            
+        
+
+        marker_5a4abef2aec74526d39e1e061df94742.bindPopup(popup_1925bcbeb5756ade558ef0f793d8036a)
+        ;
+
+        
+    
+    
+                marker_5a4abef2aec74526d39e1e061df94742.setIcon(div_icon_15fd0d2b5ac45d823dcbe8656d1086a9);
+            
+    
+            var marker_429ccf8f919d21436e7f462e029e284b = L.marker(
+                [32.39, 119.42],
+                {
+}
+            ).addTo(map_01eca87b2672ad0c156bd2fa231dd030);
+        
+    
+            var div_icon_7616d3307f8660afc565d44f3b718012 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"text-align: center; font-family: \u0027Microsoft YaHei\u0027, sans-serif;\"\u003e\n      \u003cdiv style=\"width: 25px; height: 8.0px; background-color: orangered; margin: 0 auto; border-radius: 4px; border: 1px solid rgba(0,0,0,0.5);\"\u003e\u003c/div\u003e\n      \u003cdiv style=\"font-size: 13px; font-weight: bold; color: #333; margin-top: 2px;\"\u003e\u6dee\u626c\u83dc\u003c/div\u003e\n    \u003c/div\u003e\n    ",
+  "iconAnchor": [12.5, 26.0],
+  "className": "empty",
+});
+        
+    
+        var popup_54ebecee318ad5643b2f9d9d5d4675d4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a2bcc30c7b2d67a2d04003873424c3dc = $(`<div id="html_a2bcc30c7b2d67a2d04003873424c3dc" style="width: 100.0%; height: 100.0%;"><b>菜系:</b> 淮扬菜 (Huaiyang)<br><b>代表城市:</b> 扬州<br><b>“糖”的PR值:</b> 0.0000</div>`)[0];
+                popup_54ebecee318ad5643b2f9d9d5d4675d4.setContent(html_a2bcc30c7b2d67a2d04003873424c3dc);
+            
+        
+
+        marker_429ccf8f919d21436e7f462e029e284b.bindPopup(popup_54ebecee318ad5643b2f9d9d5d4675d4)
+        ;
+
+        
+    
+    
+                marker_429ccf8f919d21436e7f462e029e284b.setIcon(div_icon_7616d3307f8660afc565d44f3b718012);
+            
+    
+            var marker_fa50c04d6ca67b65ca36837f8ec3cb08 = L.marker(
+                [31.23, 121.47],
+                {
+}
+            ).addTo(map_01eca87b2672ad0c156bd2fa231dd030);
+        
+    
+            var div_icon_3a3937de37dec8a3c6fd39589c33f222 = L.divIcon({
+  "html": "\n    \u003cdiv style=\"text-align: center; font-family: \u0027Microsoft YaHei\u0027, sans-serif;\"\u003e\n      \u003cdiv style=\"width: 25px; height: 108.0px; background-color: orangered; margin: 0 auto; border-radius: 4px; border: 1px solid rgba(0,0,0,0.5);\"\u003e\u003c/div\u003e\n      \u003cdiv style=\"font-size: 13px; font-weight: bold; color: #333; margin-top: 2px;\"\u003e\u672c\u5e2e\u83dc\u003c/div\u003e\n    \u003c/div\u003e\n    ",
+  "iconAnchor": [12.5, 126.0],
+  "className": "empty",
+});
+        
+    
+        var popup_123ab040ff6a2e0bd34a1bf1bc4c55dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2a3967ee77886ff3da427c2829b3abee = $(`<div id="html_2a3967ee77886ff3da427c2829b3abee" style="width: 100.0%; height: 100.0%;"><b>菜系:</b> 本帮菜 (Benbang)<br><b>代表城市:</b> 上海<br><b>“糖”的PR值:</b> 0.0984</div>`)[0];
+                popup_123ab040ff6a2e0bd34a1bf1bc4c55dd.setContent(html_2a3967ee77886ff3da427c2829b3abee);
+            
+        
+
+        marker_fa50c04d6ca67b65ca36837f8ec3cb08.bindPopup(popup_123ab040ff6a2e0bd34a1bf1bc4c55dd)
+        ;
+
+        
+    
+    
+                marker_fa50c04d6ca67b65ca36837f8ec3cb08.setIcon(div_icon_3a3937de37dec8a3c6fd39589c33f222);
+            
+    
+            var marker_10092896f20ac00a4a81be30d3a94fea = L.marker(
+                [41.8, 123.43],
+                {
+}
+            ).addTo(map_01eca87b2672ad0c156bd2fa231dd030);
+        
+    
+            var div_icon_7f17ad74bd91771a1a7eb52a28e1bbcb = L.divIcon({
+  "html": "\n    \u003cdiv style=\"text-align: center; font-family: \u0027Microsoft YaHei\u0027, sans-serif;\"\u003e\n      \u003cdiv style=\"width: 25px; height: 56.7830785835174px; background-color: orangered; margin: 0 auto; border-radius: 4px; border: 1px solid rgba(0,0,0,0.5);\"\u003e\u003c/div\u003e\n      \u003cdiv style=\"font-size: 13px; font-weight: bold; color: #333; margin-top: 2px;\"\u003e\u4e1c\u5317\u83dc\u003c/div\u003e\n    \u003c/div\u003e\n    ",
+  "iconAnchor": [12.5, 74.78307858351741],
+  "className": "empty",
+});
+        
+    
+        var popup_504ef9049b7e924f2cf8dad89eeebcc6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b06160c6d4001072f5791556b1e0b385 = $(`<div id="html_b06160c6d4001072f5791556b1e0b385" style="width: 100.0%; height: 100.0%;"><b>菜系:</b> 东北菜 (Dongbei)<br><b>代表城市:</b> 沈阳<br><b>“糖”的PR值:</b> 0.0480</div>`)[0];
+                popup_504ef9049b7e924f2cf8dad89eeebcc6.setContent(html_b06160c6d4001072f5791556b1e0b385);
+            
+        
+
+        marker_10092896f20ac00a4a81be30d3a94fea.bindPopup(popup_504ef9049b7e924f2cf8dad89eeebcc6)
+        ;
+
+        
+    
+    
+                marker_10092896f20ac00a4a81be30d3a94fea.setIcon(div_icon_7f17ad74bd91771a1a7eb52a28e1bbcb);
+            
+</script>
+</html>

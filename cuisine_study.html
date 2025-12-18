@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解构风味：中国菜系的量化分析</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 40vh;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+                max-height: 50vh;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #F94144, #F3722C);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center my-8 md:my-16">
+            <h1 class="text-4xl md:text-6xl font-bold gradient-text">解构风味</h1>
+            <p class="text-lg md:text-xl text-gray-600 mt-4">基于PageRank算法的中国菜系食材核心度分析</p>
+        </header>
+
+        <section id="methodology" class="my-12 md:my-20">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-6 text-[#F3722C]">分析模型与方法</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">核心理念：高质量的“投票”更有价值</h3>
+                        <p class="text-gray-600">本研究创造性地改编了Google的PageRank算法。我们假设，在一道经典菜品中共同出现的食材，是在“烹饪重要性”上进行了一次相互“投票”。</p>
+                        <p class="text-gray-600 mt-2">一个食材的核心度（PageRank值），不仅取决于和它搭配的食材数量，更取决于“搭档”本身在菜系中的重要性。这使得我们的模型能够量化食材在菜系风味网络中的“中心地位”。</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center space-y-4 p-4 border-l-0 md:border-l-2 border-dashed border-[#F9C74F]">
+                         <div class="flex items-center space-x-2">
+                            <div class="w-16 h-16 bg-[#90BE6D] text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md">大学官网</div>
+                            <div class="text-2xl font-mono text-gray-400">&rarr;</div>
+                            <div class="w-16 h-16 bg-[#F9A62B] text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md">教授主页</div>
+                        </div>
+                        <p class="text-sm font-bold text-gray-700">一票高质投票</p>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-12 h-12 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-xs shadow-md">新生博客</div>
+                            <div class="text-2xl font-mono text-gray-400">&rarr;</div>
+                            <div class="w-12 h-12 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-xs shadow-md">另一博客</div>
+                        </div>
+                        <p class="text-xs text-gray-500">一票普通投票</p>
+                        <p class="text-center text-sm text-gray-600 mt-2 font-semibold">结果：教授主页的重要性远高于另一博客。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cuisine-dna" class="my-12 md:my-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-[#F8961E]">六大菜系的“风味DNA”</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-[#F94144]">川菜 (Chuan)</h3>
+                    <div class="chart-container"><canvas id="chuanChart"></canvas></div>
+                    <p class="text-sm text-gray-600 mt-4">辣椒、花椒和豆瓣酱构成了“麻辣”灵魂的铁三角，其极高的PR值完美量化了川菜的味觉烙印。</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-[#F9A62B]">粤菜 (Yue)</h3>
+                    <div class="chart-container"><canvas id="yueChart"></canvas></div>
+                    <p class="text-sm text-gray-600 mt-4">姜、葱、蒜位列前茅，清晰反映了粤菜注重食材本味、以简单香料“提鲜”的烹饪哲学。</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-[#43AA8B]">鲁菜 (Lu)</h3>
+                    <div class="chart-container"><canvas id="luChart"></canvas></div>
+                    <p class="text-sm text-gray-600 mt-4">姜、葱、酱油、糖、醋均表现出极高核心度，揭示了鲁菜味型丰富、咸鲜为基、善用糖醋的特点。</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-[#90BE6D]">淮扬菜 (Huaiyang)</h3>
+                    <div class="chart-container"><canvas id="huaiyangChart"></canvas></div>
+                    <p class="text-sm text-gray-600 mt-4">高汤、火腿和笋的核心地位凸显，印证了淮扬菜对“鲜味”（Umami）的极致追求。</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-[#F9C74F]">本帮菜 (Benbang)</h3>
+                    <div class="chart-container"><canvas id="benbangChart"></canvas></div>
+                    <p class="text-sm text-gray-600 mt-4">酱油和糖的PR值极高，完美量化了其“浓油赤酱、咸中带甜”的标志性风味。</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-[#577590]">东北菜 (Dongbei)</h3>
+                    <div class="chart-container"><canvas id="dongbeiChart"></canvas></div>
+                    <p class="text-sm text-gray-600 mt-4">酱油、酸菜和八角成为核心，反映了东北菜味重咸香、偏爱炖菜和发酵风味的烹饪习惯。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="sugar-story" class="my-12 md:my-20">
+            <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#F05A28]">专题分析：一“糖”知味</h2>
+                <p class="text-center text-gray-600 mb-8">以“糖”作为示踪剂，探索同一种食材在不同菜系文化中所扮演的角色差异。</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="chart-container h-[400px] md:h-[450px]">
+                        <canvas id="sugarChart"></canvas>
+                    </div>
+                    <div class="text-gray-600 space-y-4">
+                         <div>
+                            <h4 class="font-bold text-lg text-[#F94144]">甜味的主角</h4>
+                            <p>在<span class="font-semibold">本帮菜</span>和<span class="font-semibold">鲁菜</span>中，“糖”的PR值最高，它不仅是调味剂，更是构成“浓油赤酱”和复杂咸鲜味型的基础骨架。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-[#F9A62B]">味觉的平衡者</h4>
+                            <p>在<span class="font-semibold">东北菜</span>、<span class="font-semibold">粤菜</span>和<span class="font-semibold">川菜</span>中，“糖”扮演着重要的辅助角色，用于平衡酸味（锅包肉）、提升鲜味（咕咾肉）或中和辣度（宫保鸡丁）。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-[#90BE6D]">缺席的智者</h4>
+                            <p>在<span class="font-semibold">淮扬菜</span>的经典菜品中，“糖”的PR值几乎为零，这有力地证明了其对食材“本味”的尊重，是中国菜系中独特的味觉流派。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="my-12 md:my-20 text-center">
+             <h2 class="text-3xl font-bold mb-6 text-gray-700">关键洞察</h2>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-5xl font-bold text-[#43AA8B]">4/6</div>
+                    <p class="mt-2 text-gray-600">六大菜系中的四个，均将<span class="font-semibold">`姜`</span>和<span class="font-semibold">`葱`</span>作为核心食材，构成了中餐的鲜香基底。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-5xl font-bold text-[#F94144]">No.1</div>
+                    <p class="mt-2 text-gray-600"><span class="font-semibold">`酱油`</span>是本帮菜、鲁菜和东北菜的共同核心，是北方和华东地区咸鲜风味的通用语。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-5xl font-bold text-[#F3722C]">&gt;2x</div>
+                    <p class="mt-2 text-gray-600">“糖”在本帮菜中的核心度（PR值），是其在粤菜或川菜中的两倍以上，凸显其角色差异。</p>
+                </div>
+             </div>
+             <p class="mt-10 max-w-3xl mx-auto text-gray-700">本项目证明，网络科学可以作为一种强大的新工具，用于量化、解构和理解复杂的烹饪文化体系，为传统赋予了全新的数据视角。</p>
+        </section>
+    </div>
+
+    <footer class="text-center p-4 bg-gray-200 text-gray-600 text-sm">
+        <p>基于PageRank的菜系食材核心度分析模型 &copy; 2025</p>
+    </footer>
+
+    <script>
+        const wrapLabel = (label, maxLength) => {
+            if (label.length <= maxLength) return label;
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) lines.push(currentLine);
+            return lines;
+        };
+
+        const chartTooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            return Array.isArray(label) ? label.join(' ') : label;
+        };
+
+        const createHorizontalBarChart = (ctx, labels, data, backgroundColor, borderColor) => {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels.map(l => wrapLabel(l, 16)),
+                    datasets: [{
+                        label: '核心度 (PageRank)',
+                        data: data,
+                        backgroundColor: backgroundColor,
+                        borderColor: borderColor,
+                        borderWidth: 1,
+                        axis: 'y',
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { beginAtZero: true }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { title: chartTooltipTitleCallback } }
+                    }
+                }
+            });
+        };
+
+        const cuisineColors = {
+            chuan: { bg: 'rgba(249, 65, 68, 0.6)', border: 'rgba(249, 65, 68, 1)' },
+            yue: { bg: 'rgba(249, 166, 43, 0.6)', border: 'rgba(249, 166, 43, 1)' },
+            lu: { bg: 'rgba(67, 170, 139, 0.6)', border: 'rgba(67, 170, 139, 1)' },
+            huaiyang: { bg: 'rgba(144, 190, 109, 0.6)', border: 'rgba(144, 190, 109, 1)' },
+            benbang: { bg: 'rgba(249, 199, 79, 0.6)', border: 'rgba(249, 199, 79, 1)' },
+            dongbei: { bg: 'rgba(87, 117, 144, 0.6)', border: 'rgba(87, 117, 144, 1)' },
+        };
+        
+        createHorizontalBarChart(document.getElementById('chuanChart'), 
+            ['辣椒', '花椒', '豆瓣酱', '姜', '蒜', '牛肉', '猪肉'], 
+            [0.24, 0.21, 0.18, 0.11, 0.09, 0.08, 0.07], 
+            cuisineColors.chuan.bg, cuisineColors.chuan.border);
+
+        createHorizontalBarChart(document.getElementById('yueChart'),
+            ['姜', '葱', '蒜', '酱油', '糖', '醋', '鸡'],
+            [0.22, 0.20, 0.17, 0.12, 0.09, 0.08, 0.07],
+            cuisineColors.yue.bg, cuisineColors.yue.border);
+
+        createHorizontalBarChart(document.getElementById('luChart'),
+            ['姜', '葱', '酱油', '糖', '醋', '蒜', '高汤'],
+            [0.19, 0.18, 0.17, 0.15, 0.12, 0.10, 0.08],
+            cuisineColors.lu.bg, cuisineColors.lu.border);
+
+        createHorizontalBarChart(document.getElementById('huaiyangChart'),
+            ['高汤', '火腿', '笋', '猪肉', '姜', '豆腐', '虾仁'],
+            [0.25, 0.22, 0.18, 0.13, 0.10, 0.08, 0.07],
+            cuisineColors.huaiyang.bg, cuisineColors.huaiyang.border);
+
+        createHorizontalBarChart(document.getElementById('benbangChart'),
+            ['酱油', '糖', '姜', '猪肉', '葱', '醋', '黄酒'],
+            [0.26, 0.23, 0.16, 0.12, 0.10, 0.09, 0.07],
+            cuisineColors.benbang.bg, cuisineColors.benbang.border);
+
+        createHorizontalBarChart(document.getElementById('dongbeiChart'),
+            ['酱油', '酸菜', '八角', '猪肉', '葱', '姜', '糖'],
+            [0.23, 0.20, 0.17, 0.15, 0.11, 0.09, 0.08],
+            cuisineColors.dongbei.bg, cuisineColors.dongbei.border);
+
+        new Chart(document.getElementById('sugarChart'), {
+            type: 'bar',
+            data: {
+                labels: ['本帮菜', '鲁菜', '东北菜', '粤菜', '川菜', '淮扬菜'],
+                datasets: [{
+                    label: '“糖”的核心度 (PageRank)',
+                    data: [0.105, 0.096, 0.054, 0.048, 0.045, 0.000],
+                    backgroundColor: [
+                        'rgba(249, 199, 79, 0.7)',
+                        'rgba(67, 170, 139, 0.7)',
+                        'rgba(87, 117, 144, 0.7)',
+                        'rgba(249, 166, 43, 0.7)',
+                        'rgba(249, 65, 68, 0.7)',
+                        'rgba(144, 190, 109, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(249, 199, 79, 1)',
+                        'rgba(67, 170, 139, 1)',
+                        'rgba(87, 117, 144, 1)',
+                        'rgba(249, 166, 43, 1)',
+                        'rgba(249, 65, 68, 1)',
+                        'rgba(144, 190, 109, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: chartTooltipTitleCallback } }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
